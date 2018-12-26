@@ -1,0 +1,18 @@
+
+{% extends 'basiapp/index.html' %}
+{% block anyname %}
+This is form page
+{% if registered %}
+
+<h2> Registered</h2>
+{% else %}
+<form method="POST" enctype="multipart/form-data" >
+      {{form.as_p}}
+      {{form1.as_p}}
+      {% csrf_token %}
+      <input type="submit" class="btn btn-large btn-primary" value="submit">
+
+    </form>
+
+{% endif %}
+{% endblock %}

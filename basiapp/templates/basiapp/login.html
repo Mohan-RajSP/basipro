@@ -1,0 +1,15 @@
+{% extends 'basiapp/index.html' %}
+
+{% block anyname %}
+<div>
+<form method="POST" action="{% url 'basiapp:user_login' %}">
+    {% csrf_token %}
+    USERNAME:
+    <input type="text" name="username" placeholder="username" /><br>
+    PASSWORD:
+    <input type="text" name="password" placeholder="password"/><br>
+    <input type="submit" value="login"/>
+</form>
+    </div>
+
+{% endblock %}

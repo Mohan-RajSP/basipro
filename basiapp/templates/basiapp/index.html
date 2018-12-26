@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<header>
+<nav class="navbar navbar-expand-lg navbar-Dark bg-dark">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li class="navbar-brand"><a href="{% url 'basiapp:FORMFILL_app' %}">Mohan</a></li>
+            {% if user.is_authenticated %}
+            <li class="navbar-brand"><a href="{% url 'basiapp:user_logout' %}">Logout</a></li>
+            {% else %}
+            <li class="navbar-brand"><a href="{% url 'basiapp:user_login' %}">Login</a></li>
+            {% endif %}
+
+        </ul>
+    </div>
+</nav>
+    </header>
+
+{% block anyname %}
+{% endblock %}
+
+</body>
+</html>
